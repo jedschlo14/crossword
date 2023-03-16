@@ -1,0 +1,15 @@
+.background {
+    background-color: #dad2d8;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    background-color: darkcyan;
+    padding: 50px;
+    border-radius: 20px;
+}
