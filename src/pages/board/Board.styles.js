@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const CrosswordContainer = styled.div`
-    background-color: ${({ theme }) => theme.background};
     display: flex;
     padding: 3rem;
     border-radius: 0.75rem;

@@ -5,17 +5,18 @@ import { useTheme } from "@emotion/react";
 
 export const useBoard = () => {
     const [puzzle, setPuzzle] = useState(null);
-    const date = useParams();
+    const params = useParams();
     const theme = useTheme();
 
     useEffect(() => {
+        const date = params.date.split("-");
         const URL =
             "http://localhost:8080/puzzle/" +
-            date.year +
+            date[0] +
             "/" +
-            date.month +
+            date[1] +
             "/" +
-            date.day;
+            date[2];
         axios
             .get(URL)
             .then((response) => {
@@ -24,7 +25,7 @@ export const useBoard = () => {
             .catch((error) => {
                 console.log(error);
             });
-    }, [date]);
+    }, [params]);
 
     return {
         puzzle,

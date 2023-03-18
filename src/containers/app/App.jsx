@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Landing, Board, About, PageNotFound } from "pages";
+import { Landing, Board, About, PageNotFound, BoardSelector } from "pages";
 import { EmotionProvider } from "containers/emotionProvider";
 import { PageContainer } from "assets/styles/Common.styles";
 
@@ -13,7 +13,8 @@ export const App = () => {
                 <PageContainer>
                     <Routes>
                         <Route path="/" element={<Landing />} />
-                        <Route path="/:year/:month/:day" element={<Board />} />
+                        <Route path="/board/:date" element={<Board />} />
+                        <Route path="/boards" element={<BoardSelector />} />
                         <Route path="/about" element={<About />} />
                         <Route path="*" element={<PageNotFound />} />
                     </Routes>
