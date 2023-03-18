@@ -1,12 +1,17 @@
-import Crossword from "@jaredreisinger/react-crossword";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import Crossword, { ThemeProvider } from "@jaredreisinger/react-crossword";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import "./Board.css";
+import { CrosswordContainer } from "./Board.styles";
+import { useTheme } from "@emotion/react";
 
 export const Board = () => {
     const [puzzle, setPuzzle] = useState(null);
     const date = useParams();
+    const theme = useTheme();
 
     useEffect(() => {
         const URL =
@@ -27,10 +32,12 @@ export const Board = () => {
     }, [date]);
 
     return (
-        <div className="background">
-            <div className="crossword-container">
-                {puzzle != null ? <Crossword data={puzzle} /> : null}
-            </div>
-        </div>
+        <CrosswordContainer>
+            {puzzle != null ? (
+                <ThemeProvider theme={theme.crossword}>
+                    <Crossword data={puzzle} />
+                </ThemeProvider>
+            ) : null}
+        </CrosswordContainer>
     );
 };
