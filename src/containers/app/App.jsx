@@ -4,13 +4,13 @@ import { jsx } from "@emotion/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Landing, Board, About, PageNotFound, BoardSelector } from "pages";
 import { EmotionProvider } from "containers/emotionProvider";
-import { PageContainer } from "assets/styles/Common.styles";
+import { PageWrapper } from "assets/styles/Common.styles";
 
 export const App = () => {
     return (
         <EmotionProvider>
             <BrowserRouter>
-                <PageContainer>
+                <PageWrapper>
                     <Routes>
                         <Route path="/" element={<Landing />} />
                         <Route path="/board/:date" element={<Board />} />
@@ -18,7 +18,7 @@ export const App = () => {
                         <Route path="/about" element={<About />} />
                         <Route path="*" element={<PageNotFound />} />
                     </Routes>
-                </PageContainer>
+                </PageWrapper>
             </BrowserRouter>
         </EmotionProvider>
     );

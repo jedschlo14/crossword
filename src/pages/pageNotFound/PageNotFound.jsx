@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { BlankPageText } from "assets/styles/Common.styles";
+import { Foreground } from "assets/styles/Common.styles";
 
 export const PageNotFound = () => {
-    return <BlankPageText>Error 404</BlankPageText>;
+    return <Foreground>Error 404</Foreground>;
 };

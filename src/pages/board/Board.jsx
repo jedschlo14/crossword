@@ -2,19 +2,21 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
 import Crossword, { ThemeProvider } from "@jaredreisinger/react-crossword";
-import { CrosswordContainer } from "./Board.styles";
+import { Timer } from "components";
+import { CrosswordWrapper } from "./Board.styles";
 import { useBoard } from "./useBoard";
 
 export const Board = () => {
     const { puzzle, theme } = useBoard();
 
     return (
-        <CrosswordContainer>
+        <ThemeProvider theme={theme.crossword}>
             {puzzle != null ? (
-                <ThemeProvider theme={theme.crossword}>
+                <CrosswordWrapper>
+                    <Timer />
                     <Crossword data={puzzle} />
-                </ThemeProvider>
+                </CrosswordWrapper>
             ) : null}
-        </CrosswordContainer>
+        </ThemeProvider>
     );
 };

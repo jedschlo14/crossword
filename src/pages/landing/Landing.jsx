@@ -1,8 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { BlankPageText } from "assets/styles/Common.styles";
+import { LandingWrapper, MenuSelector } from "./Landing.styles";
 
 export const Landing = () => {
-    return <BlankPageText>Landing Page</BlankPageText>;
+    return (
+        <LandingWrapper>
+            <MenuSelector to="/boards">Boards</MenuSelector>
+        </LandingWrapper>
+    );
 };

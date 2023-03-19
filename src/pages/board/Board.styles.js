@@ -1,39 +1,50 @@
 import styled from "@emotion/styled";
 
-export const CrosswordContainer = styled.div`
-    display: flex;
+export const CrosswordWrapper = styled.div`
+    display: grid;
+    grid-template-rows: repeat(10, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
     padding: 3rem;
-    border-radius: 0.75rem;
     overflow: hidden;
 
     .clues {
-        background-color: ${({ theme }) => theme.foreground};
+        grid-row: 1 / 11;
+        grid-column: 2;
         display: flex;
-        border-radius: 0 0.5em 0.5em 0.5em;
-        border: 0.25em solid;
+        background-color: ${({ theme }) => theme.foreground};
         border-color: ${({ theme }) => theme.border};
+        border-radius: 0.5rem;
+        border-width: 0.375rem;
+        border-style: solid;
+        padding: 0;
+    }
+
+    .clue {
+        display: table;
+        font-size: 1rem;
+        padding: 0.125rem 0.25rem;
+        margin: 0;
+        border-radius: 0.25rem;
     }
 
     .direction {
         overflow-y: scroll;
-        padding: 1.5em;
-        margin: 0;
-    }
-
-    .clue {
-        font-size: medium;
-        padding: 0.125em;
+        padding: 1.5rem;
+        margin-bottom: 0 !important;
     }
 
     .crossword {
+        grid-row: 2 / 4;
+        grid-column: 1;
         flex: 1 !important;
     }
 
     svg {
-        border-radius: 0.5em 0em 0em 0.5em;
-        border-width: 0.25em 0 0.25em 0.25em;
-        border-style: solid;
         border-color: ${({ theme }) => theme.border};
+        border-radius: 0.5rem;
+        border-width: 0.375rem;
+        border-style: solid;
     }
 
     input:focus-visible {
