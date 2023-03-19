@@ -13,6 +13,8 @@ export const PauseMenuWrapper = styled.div`
         !isActive || isPaused ? "rgba(0, 0, 0, 0.5)" : "transparent"};
     backdrop-filter: ${({ isActive, isPaused }) =>
         !isActive || isPaused ? "blur(8px)" : "none"};
+    display: ${({ isActive, isPaused }) =>
+        !isActive || isPaused ? "flex" : "none"};
     transition: all 0.3s ease;
 `;
 
