@@ -1,9 +1,9 @@
 const palette = {
-    main0: "#f0f0f0",
-    main1: "#90e0ef",
-    main2: "#80b0d0",
-    main3: "#0077b6",
-    main4: "#000c3c",
+    main0: '#f0f0f0',
+    main1: '#90e0ef',
+    main2: '#80b0d0',
+    main3: '#0077b6',
+    main4: '#000c3c',
 };
 
 export const dark = {
@@ -12,12 +12,13 @@ export const dark = {
     border: palette.main4,
     text: palette.main4,
     textAlternate: palette.main0,
+    scrollbar: palette.main2,
     button: {
         background: palette.main0,
         hover: palette.main1,
     },
     crossword: {
-        columnBreakpoint: "0",
+        columnBreakpoint: '0',
         gridBackground: palette.main4,
         cellBackground: palette.main0,
         cellBorder: palette.main4,

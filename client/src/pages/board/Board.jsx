@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
-import Crossword, { ThemeProvider } from "@jaredreisinger/react-crossword";
-import { Timer } from "components";
-import { CrosswordWrapper } from "./Board.styles";
-import { useBoard } from "./useBoard";
+import { jsx } from '@emotion/react';
+import Crossword, { ThemeProvider } from '@jaredreisinger/react-crossword';
+import { Timer } from 'components';
+import { BoardPageWrapper, CrosswordWrapper } from './Board.styles';
+import { useBoard } from './useBoard';
 
 export const Board = () => {
     const { puzzle, theme } = useBoard();
@@ -12,10 +12,12 @@ export const Board = () => {
     return (
         <ThemeProvider theme={theme.crossword}>
             {puzzle != null ? (
-                <CrosswordWrapper>
+                <BoardPageWrapper>
                     <Timer />
-                    <Crossword data={puzzle} />
-                </CrosswordWrapper>
+                    <CrosswordWrapper>
+                        <Crossword data={puzzle} />
+                    </CrosswordWrapper>
+                </BoardPageWrapper>
             ) : null}
         </ThemeProvider>
     );

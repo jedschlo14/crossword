@@ -10,13 +10,7 @@ export const useBoard = () => {
 
     useEffect(() => {
         const date = params.date.split("-");
-        const URL =
-            "http://localhost:8080/puzzle/" +
-            date[0] +
-            "/" +
-            date[1] +
-            "/" +
-            date[2];
+        const URL = "http://localhost:8080/puzzle/" + date[0] + "/" + date[1] + "/" + date[2]; // prettier-ignore
         axios
             .get(URL)
             .then((response) => {
