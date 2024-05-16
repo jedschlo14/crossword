@@ -1,9 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
-import { PauseMenuWrapper } from "./PauseMenu.styles";
+import { jsx } from '@emotion/react';
+import {
+    PauseMenuWrapper,
+    PauseMenuButton,
+    PauseMenuTitle,
+    PauseMenuModal,
+} from './PauseMenu.styles';
 
 export const PauseMenu = ({
+    puzzleName,
     isActive,
     isPaused,
     handleStart,
@@ -16,15 +22,13 @@ export const PauseMenu = ({
             isActive={isActive}
             isPaused={isPaused}
             onClick={handleClick}
-        />
+        >
+            <PauseMenuModal onClick={(e) => e.stopPropagation()}>
+                <PauseMenuTitle>Puzzle: {puzzleName}</PauseMenuTitle>
+                <PauseMenuButton onClick={handleClick}>
+                    {isActive ? 'Resume' : 'Start'}
+                </PauseMenuButton>
+            </PauseMenuModal>
+        </PauseMenuWrapper>
     );
 };
-
-// {
-//     /* <PauseMenuModal onClick={(e) => e.stopPropagation()}>
-//     <PauseMenuTitle>Pause Menu</PauseMenuTitle>
-//     <PauseMenuButton onClick={handleClick}>
-//         {isActive ? "Resume" : "Start"}
-//     </PauseMenuButton>
-// </PauseMenuModal> */
-// }

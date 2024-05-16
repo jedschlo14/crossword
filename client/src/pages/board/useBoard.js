@@ -1,15 +1,22 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useTheme } from "@emotion/react";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useTheme } from '@emotion/react';
 
 export const useBoard = () => {
     const [puzzle, setPuzzle] = useState(null);
+    const [puzzleName, setPuzzleName] = useState('');
     const params = useParams();
     const theme = useTheme();
 
     useEffect(() => {
-        const date = params.date.split("-");
+        const dateStr = new Date(params.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+        setPuzzleName(dateStr);
+        const date = params.date.split('-');
         const URL = "http://localhost:8080/puzzle/" + date[0] + "/" + date[1] + "/" + date[2]; // prettier-ignore
         axios
             .get(URL)
@@ -23,6 +30,7 @@ export const useBoard = () => {
 
     return {
         puzzle,
+        puzzleName,
         theme,
     };
 };

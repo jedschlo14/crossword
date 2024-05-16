@@ -7,16 +7,16 @@ import { BoardPageWrapper, CrosswordWrapper } from './Board.styles';
 import { useBoard } from './useBoard';
 
 export const Board = () => {
-    const { puzzle, theme } = useBoard();
+    const { puzzle, puzzleName, theme } = useBoard();
 
     return (
         <ThemeProvider theme={theme.crossword}>
             {puzzle != null ? (
                 <BoardPageWrapper>
-                    <Timer />
                     <CrosswordWrapper>
                         <Crossword data={puzzle} />
                     </CrosswordWrapper>
+                    <Timer puzzleName={puzzleName} />
                 </BoardPageWrapper>
             ) : null}
         </ThemeProvider>

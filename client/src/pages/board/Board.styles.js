@@ -20,7 +20,7 @@ export const BoardPageWrapper = styled.div`
         background-color: ${({ theme }) => theme.foreground};
         border-color: ${({ theme }) => theme.border};
         border-radius: 0.5rem;
-        border-width: 0.375rem;
+        border-width: 0.25rem;
         border-style: solid;
         padding: 0;
     }
@@ -30,7 +30,7 @@ export const BoardPageWrapper = styled.div`
         font-size: 1rem;
         padding: 0.125rem 0.25rem;
         margin: 0;
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         cursor: pointer;
     }
 
@@ -53,7 +53,7 @@ export const BoardPageWrapper = styled.div`
     svg {
         border-color: ${({ theme }) => theme.border};
         border-radius: 0.5rem;
-        border-width: 0.375rem;
+        border-width: 0.25rem;
         border-style: solid;
     }
 
