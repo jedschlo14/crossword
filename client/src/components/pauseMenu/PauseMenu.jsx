@@ -21,7 +21,7 @@ export const PauseMenu = ({
         <PauseMenuWrapper
             isActive={isActive}
             isPaused={isPaused}
-            onClick={handleClick}
+            // onClick={handleClick}
         >
             <PauseMenuModal onClick={(e) => e.stopPropagation()}>
                 <PauseMenuTitle>Puzzle: {puzzleName}</PauseMenuTitle>
