@@ -34,6 +34,13 @@ export const PauseMenuModal = styled.div`
 
 export const PauseMenuTitle = styled.h3``;
 
+export const PauseMenuButtons = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+`;
+
 export const PauseMenuButton = styled(Button)`
     font-size: 1rem;
     font-weight: 600;

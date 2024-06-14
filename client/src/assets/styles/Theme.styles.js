@@ -5,6 +5,8 @@ const palette = {
     main3: '#0077b6',
     main4: '#004586',
     main5: '#000c3c',
+    special1: '#FF8B8B',
+    special2: '#EB4747',
 };
 
 export const dark = {
@@ -17,6 +19,10 @@ export const dark = {
     button: {
         background: palette.main2,
         hover: palette.main4,
+        special: {
+            background: palette.special1,
+            hover: palette.special2,
+        },
     },
     crossword: {
         columnBreakpoint: '0',

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const PageWrapper = styled.div`
     height: 100vh;
@@ -24,15 +25,22 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${({ theme }) => theme.button.background};
-    border-color: ${({ theme }) => theme.border};
+    background-color: ${({ theme, isSpecial }) =>
+        isSpecial ? theme.button.special.background : theme.button.background};
+    border-color: ${({ theme, isSpecial }) =>
+        isSpecial ? theme.button.special.hover : theme.button.hover};
     border-style: none;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
     &:hover {
-        background-color: ${({ theme }) => theme.button.hover};
+        background-color: ${({ theme, isSpecial }) =>
+            isSpecial ? theme.button.special.hover : theme.button.hover};
         color: ${({ theme }) => theme.textAlternate};
     }
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
 `;

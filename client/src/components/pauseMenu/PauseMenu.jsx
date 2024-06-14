@@ -6,7 +6,9 @@ import {
     PauseMenuButton,
     PauseMenuTitle,
     PauseMenuModal,
+    PauseMenuButtons,
 } from './PauseMenu.styles';
+import { StyledLink } from 'assets/styles/Common.styles';
 
 export const PauseMenu = ({
     puzzleName,
@@ -15,19 +17,25 @@ export const PauseMenu = ({
     handleStart,
     handlePauseResume,
 }) => {
-    const handleClick = () => (isActive ? handlePauseResume() : handleStart());
+    const handleResumeClick = () =>
+        isActive ? handlePauseResume() : handleStart();
 
     return (
         <PauseMenuWrapper
             isActive={isActive}
             isPaused={isPaused}
-            // onClick={handleClick}
+            // onClick={handleResumeClick}
         >
             <PauseMenuModal onClick={(e) => e.stopPropagation()}>
                 <PauseMenuTitle>Puzzle: {puzzleName}</PauseMenuTitle>
-                <PauseMenuButton onClick={handleClick}>
-                    {isActive ? 'Resume' : 'Start'}
-                </PauseMenuButton>
+                <PauseMenuButtons>
+                    <PauseMenuButton onClick={handleResumeClick}>
+                        {isActive ? 'Resume' : 'Start'}
+                    </PauseMenuButton>
+                    <StyledLink to='/boards'>
+                        <PauseMenuButton isSpecial={true}>Exit</PauseMenuButton>
+                    </StyledLink>
+                </PauseMenuButtons>
             </PauseMenuModal>
         </PauseMenuWrapper>
     );
