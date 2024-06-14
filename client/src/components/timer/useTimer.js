@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export const useTimer = () => {
     const [isActive, setIsActive] = useState(false);
@@ -13,13 +13,12 @@ export const useTimer = () => {
     }, [isActive, isPaused]);
 
     const handleStart = () => {
-        console.log("handleStart");
         setIsActive(true);
         setIsPaused(false);
     };
 
     const handlePauseResume = () => {
-        console.log("handlePauseResume");
+        console.log('handlePauseResume');
         setIsPaused(!isPaused);
     };
 

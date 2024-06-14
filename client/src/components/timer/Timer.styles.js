@@ -19,7 +19,7 @@ export const Digits = styled.span`
 `;
 
 export const PauseButton = styled(Button)`
-    width: 8rem;
+    width: 6rem;
     height: 3rem;
     border-width: 0.25rem;
     border-style: solid;
