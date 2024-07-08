@@ -3,21 +3,21 @@
 import { jsx } from '@emotion/react';
 import Crossword, { ThemeProvider } from '@jaredreisinger/react-crossword';
 import { Timer } from 'components';
-import { BoardPageWrapper, CrosswordWrapper } from './Board.styles';
-import { useBoard } from './useBoard';
+import { PuzzlePageWrapper, CrosswordWrapper } from './Puzzle.styles';
+import { usePuzzle } from './usePuzzle';
 
-export const Board = () => {
-    const { puzzle, puzzleName, theme } = useBoard();
+export const Puzzle = () => {
+    const { puzzle, puzzleName, theme } = usePuzzle();
 
     return (
         <ThemeProvider theme={theme.crossword}>
             {puzzle != null ? (
-                <BoardPageWrapper>
+                <PuzzlePageWrapper>
                     <CrosswordWrapper>
                         <Crossword data={puzzle} />
                     </CrosswordWrapper>
                     <Timer puzzleName={puzzleName} />
-                </BoardPageWrapper>
+                </PuzzlePageWrapper>
             ) : null}
         </ThemeProvider>
     );

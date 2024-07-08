@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const BoardPageWrapper = styled.div`
+export const PuzzlePageWrapper = styled.div`
     display: grid;
     grid-template-rows: repeat(10, minmax(0, 1fr));
     grid-template-columns: repeat(2, minmax(0, 1fr));

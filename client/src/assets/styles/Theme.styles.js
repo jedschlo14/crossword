@@ -16,6 +16,10 @@ export const dark = {
     text: palette.main5,
     textAlternate: palette.main0,
     scrollbar: palette.main2,
+    tree: {
+        hover: palette.main2,
+        selected: palette.main3,
+    },
     button: {
         background: palette.main2,
         hover: palette.main4,

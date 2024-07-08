@@ -32,7 +32,7 @@ export const PauseMenu = ({
                     <PauseMenuButton onClick={handleResumeClick}>
                         {isActive ? 'Resume' : 'Start'}
                     </PauseMenuButton>
-                    <StyledLink to='/boards'>
+                    <StyledLink to='/puzzle'>
                         <PauseMenuButton isSpecial={true}>Exit</PauseMenuButton>
                     </StyledLink>
                 </PauseMenuButtons>

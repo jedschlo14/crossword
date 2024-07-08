@@ -21,6 +21,14 @@ export const Foreground = styled.div`
     border-radius: 1rem;
 `;
 
+export const Header = styled.div`
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 225px;
+    color: ${({ theme }) => theme.text};
+`;
+
 export const Button = styled.button`
     display: flex;
     justify-content: center;
@@ -43,4 +51,5 @@ export const Button = styled.button`
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
+    color: ${({ theme }) => theme.text};
 `;

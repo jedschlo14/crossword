@@ -3,21 +3,24 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTheme } from '@emotion/react';
 
-export const useBoard = () => {
+export const usePuzzle = () => {
     const [puzzle, setPuzzle] = useState(null);
     const [puzzleName, setPuzzleName] = useState('');
     const params = useParams();
     const theme = useTheme();
 
     useEffect(() => {
-        const dateStr = new Date(params.date).toLocaleDateString('en-US', {
+        const dateStr = new Date(
+            params.year,
+            params.month,
+            params.day
+        ).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
         });
         setPuzzleName(dateStr);
-        const date = params.date.split('-');
-        const URL = "http://localhost:8080/puzzle/" + date[0] + "/" + date[1] + "/" + date[2]; // prettier-ignore
+        const URL = "http://localhost:8080/puzzle/" + params.year + "/" + params.month + "/" + params.day; // prettier-ignore
         axios
             .get(URL)
             .then((response) => {
